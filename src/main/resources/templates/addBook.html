@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: header">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script th:src="@{/js/jquery-1.9.1.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <title th:text="${title}">Default Title</title>
+</head>
+<body>
+<nav th:replace="fragments/fragments :: navigation">
+</nav>
+
+<div align="center">
+    <h1>New/Edit Book</h1>
+    <form action="#" method="post" th:action="@{/save_book}" th:object="${book}">
+        <table>
+            <input th:field="*{id}" type="hidden"/>
+            <tr>
+                <td>Book Name:</td>
+                <td><input class="form-control" th:field="*{book_name}" type="text"></input></td>
+            </tr>
+            <tr>
+                <td>ISBN:</td>
+                <td><input class="form-control" th:field="*{ISBN}" type="text"></input></td>
+            </tr>
+            <tr>
+                <td>Publish Year:</td>
+                <td><input class="form-control" th:field="*{publish_year}" type="text"></input></td>
+            </tr>
+
+
+            <tr>
+                &nbsp;&nbsp;<td>
+                <button class="btn btn-danger" type="submit">Save</button>
+            </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

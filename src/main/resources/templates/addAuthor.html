@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: header">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script th:src="@{/js/jquery-1.9.1.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <title th:text="${title}">Default Title</title>
+</head>
+<body>
+<nav th:replace="fragments/fragments :: navigation">
+</nav>
+
+<div align="center">
+    <h1>New/Edit Author</h1>
+    <form action="#" method="post" th:action="@{/save_author}" th:object="${author}">
+        <table>
+            <input th:field="*{id}" type="hidden"/>
+            <tr>
+                <td>Author Name:</td>
+                <td><input class="form-control" th:field="*{name}" type="text"></input></td>
+            </tr>
+            <tr>
+                <td>Author Surname:</td>
+                <td><input class="form-control" th:field="*{dateOfBirth}" type="text"></input></td>
+            </tr>
+
+
+            <tr>
+                &nbsp;&nbsp;
+                <td>
+                    <button class="btn btn-danger" type="submit">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

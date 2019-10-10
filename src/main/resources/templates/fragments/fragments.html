@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+    <title th:text="${title}">Default Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script th:src="@{/js/jquery-1.9.1.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light " th:fragment="navigation">
+    <a class="navbar-brand" href="/index">Book Library</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/index">Home <span class="sr-only"></span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#" id="navbarDropdown" role="button">
+                    Menu
+                </a>
+                <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+                    <a class="dropdown-item" href="/list_authors">All authors</a>
+                    <a class="dropdown-item" href="/list_books">All books</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/add_author">Add author</a>
+                    <a class="dropdown-item" href="/add_book">Add book</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/rest/list_books">List all books REST</a>
+                    <a class="dropdown-item" href="/rest/list_authors">List all authors REST</a>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+</body>
+</html>
