@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Author;
+import com.example.demo.model.Book;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,4 +16,8 @@ public interface AuthorService {
     void deleteAuthor(Integer authorId);
 
     List<Author> getAllAuthors();
+
+    void addBook(Author author,Book book);
+
+
 }

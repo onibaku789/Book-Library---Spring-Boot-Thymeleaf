@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Author;
+import com.example.demo.model.Book;
 import com.example.demo.repository.AuthorRepository;
 import org.springframework.stereotype.Service;
 
@@ -41,5 +42,12 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Author> getAllAuthors() {
 
         return new ArrayList<>(authorRepository.findAll());
+    }
+
+    @Override
+    public void addBook(Author author,Book book) {
+        if( authorRepository.findById(author.getId()).isPresent())
+        authorRepository.findById(author.getId()).get().getBooks().add(book);
+
     }
 }

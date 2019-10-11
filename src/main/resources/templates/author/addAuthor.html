@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/fragments :: header">
+<head th:replace="fragments :: header">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
     />
 
-    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.css}"/>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
-    <script th:src="@{/js/jquery-1.9.1.js}"></script>
-    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/static/js/jquery-1.9.1.js}"></script>
+    <script th:src="@{/static/js/bootstrap.min.js}"></script>
 
     <title th:text="${title}">Default Title</title>
 </head>
 <body>
-<nav th:replace="fragments/fragments :: navigation">
+<nav th:replace="fragments :: navigation">
 </nav>
 
 <div align="center">

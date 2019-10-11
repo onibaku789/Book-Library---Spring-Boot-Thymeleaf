@@ -1,3 +1,4 @@
+<!DOCTYPE html>addBook
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: header">
@@ -14,24 +15,16 @@
 <body>
 <nav th:replace="fragments :: navigation">
 </nav>
-<form action="/addBook" method="post"  th:object="${form}">
-
-    <div class="form-group">
-
-        <label th:for="bookId"> Book
-
-            <select name="bookId">
-                <option th:each="book : ${books}"
-                        th:text="${book?.book_name}"
-                        th:value="${book?.id}"></option>
-            </select>
-        </label>
-    </div>
-<input type="hidden" name="authorId" th:value="${authorId}"/>
-
-    <input type="submit" value="Add book"/>
-</form>
+<body class="container-fluid">
 
 
+
+<ul>
+    <li th:each="book : ${books}" th:text="${book?.book_name}"></li>
+</ul>
+
+<p th:unless="${books.size()}"><i>No books yet</i></p>
+
+<p><a class=" btn btn-danger"  th:href="@{'/addBook/' + ${authorId}}">Add books </a></p>
 </body>
 </html>

@@ -11,10 +11,24 @@
     <groupId>com.example</groupId>
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+
+    <description>Demo project for Spring Boot
+    </description>
+    <developers>
+        <developer>
+            <id>nar</id>
+            <name>Attila Varga</name>
+            <roles>
+                <role>
+                    Developer
+                </role>
+            </roles>
+            <email>varga.attila798@gmail.com</email>
+        </developer>
+    </developers>
 
     <properties>
+
         <java.version>11</java.version>
     </properties>
 

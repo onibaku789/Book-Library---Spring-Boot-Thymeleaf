@@ -17,14 +17,12 @@ class Book {
     private String book_name;
     private String ISBN;
     private String publish_year;
-    private String publisher;
 
-    @ManyToMany
+
+    @ManyToMany(mappedBy = "books")
     private Set<Author> authors = new HashSet<>();
 
-    public void addAuthor(Author author) {
-        authors.add(author);
-    }
+
 
 
 }

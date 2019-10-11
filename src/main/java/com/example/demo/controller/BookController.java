@@ -43,7 +43,7 @@ public class BookController {
     public ModelAndView newBook(ModelAndView modelAndView) {
         Book book = new Book();
         modelAndView.addObject("book", book);
-        modelAndView.setViewName("addBook");
+        modelAndView.setViewName("book/addBook");
         modelAndView.addObject("title", "Add book");
 
         return modelAndView;
@@ -66,7 +66,7 @@ public class BookController {
     public ModelAndView updateBook(ModelAndView modelAndView, HttpServletRequest request) {
         int bookId = Integer.parseInt(request.getParameter("id"));
         Optional<Book> book = bookService.getBook(bookId);
-        modelAndView.setViewName("addBook");
+        modelAndView.setViewName("book/addBook");
         modelAndView.addObject("book", book);
         modelAndView.addObject("title", "Edit book");
 
